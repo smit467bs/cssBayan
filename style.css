@@ -13,11 +13,16 @@
     flex-direction: column;
     height: 100%;
     position: relative;
-    left: 50%;
-    right: 50%;
+    left: 20%;
+    right: 20%;
+}
+
+.accordeon .accordeon-item:hover .memes {
+    display: block;
 }
 
 .memes {
+    display: none;
     width: 600px;
     height: 400px;
 }
