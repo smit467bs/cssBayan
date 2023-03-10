@@ -21,6 +21,31 @@
     display: block;
 }
 
+/*.accordeon .accordeon-item:hover .memes {*/
+/*    display: block;*/
+/*}*/
+
+.accordeon .accordeon-item, #one:checked ~ * .memes {
+    display: block;
+}
+
+.accordeon .accordeon-item, #two:checked ~ * .memes {
+    display: block;
+}
+
+.accordeon .accordeon-item, #three:checked ~ * .memes {
+    display: block;
+}
+
+.accordeon .accordeon-item, #four:checked ~ * .memes {
+    display: block;
+}
+
+
+/*.check:checked .memes {*/
+/*    display: block;*/
+/*}*/
+
 .memes {
     display: none;
     width: 601px;
