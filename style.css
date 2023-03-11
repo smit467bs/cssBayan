@@ -20,12 +20,16 @@ body {
     flex-direction: column;
     height: 100%;
     position: relative;
-
+    color: blue;
 }
 
 .accordeon .accordeon-item:active {
     color: blue;
     opacity: 0.4;
+}
+
+.accordeon .accordeon-item:after {
+    color: black;
 }
 
 .accordeon .accordeon-item:hover .memes {
@@ -42,7 +46,7 @@ body {
 }
 
 .accordeon-item .accordeon-item:not(img) {
-    color: blue;
+    /*color: blue;*/
 }
 
 .accordeon .accordeon-item:has(img):after .memes {
@@ -59,6 +63,15 @@ body {
     animation: none;
 }
 
+
+.accordeon .accordeon-item, #one:checked ~ * .head-memes {
+    /*color: black;*/
+}
+
+#one:checked ~ * .accordeon-item {
+    /*color: black;*/
+}
+
 #one:checked ~ * .bar1 {
     transform: translate(0, 6px) rotate(-45deg);
 }
@@ -70,7 +83,10 @@ body {
 .accordeon .accordeon-item, #two:checked ~ * .memes {
     display: block;
     animation: none;
+}
 
+.accordeon .accordeon-item, #two:checked ~ * .accordeon-item {
+    /*color: black;*/
 }
 
 #two:checked ~ * .bar1 {
@@ -161,6 +177,7 @@ hr {
 }
 
 .bar1, .bar2 {
+    display: none;
     background-color: black;
     width: 24px;
     height: 4px;
@@ -180,6 +197,22 @@ hr {
 .head-memes {
     display: flex;
     flex-direction: row;
+}
+
+.accordeon:hover .bar1 {
+    display: block;
+}
+
+.accordeon:hover .bar2 {
+    display: block;
+}
+
+.accordeon:hover {
+    color: black;
+}
+
+.head-memes:hover {
+    cursor: pointer;
 }
 
 /*
