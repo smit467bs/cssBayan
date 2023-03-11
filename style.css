@@ -1,5 +1,6 @@
 body {
     overflow-x: hidden;
+    background-color: #288fb5;
 }
 
 .app-wrapper {
@@ -22,9 +23,26 @@ body {
 
 }
 
+.accordeon .accordeon-item:active {
+    color: blue;
+    opacity: 0.4;
+}
+
 .accordeon .accordeon-item:hover .memes {
     display: block;
     animation: slideOn 0.7s 1 ease-in-out;
+}
+
+.accordeon .accordeon-item:hover .bar1 {
+    transform: translate(0, 6px) rotate(-45deg);
+}
+
+.accordeon .accordeon-item:hover .bar2 {
+    transform: translate(0, -4px) rotate(45deg);
+}
+
+.accordeon-item .accordeon-item:not(img) {
+    color: blue;
 }
 
 .accordeon .accordeon-item:has(img):after .memes {
@@ -34,13 +52,19 @@ body {
 
 .accordeon .accordeon-item:has(img):hover .memes {
     display: flex;
-    /*animation-play-state: paused;*/
 }
 
 .accordeon .accordeon-item, #one:checked ~ * .memes {
     display: block;
     animation: none;
+}
 
+#one:checked ~ * .bar1 {
+    transform: translate(0, 6px) rotate(-45deg);
+}
+
+#one:checked ~ * .bar2 {
+    transform: translate(0, -4px) rotate(45deg);
 }
 
 .accordeon .accordeon-item, #two:checked ~ * .memes {
@@ -49,14 +73,38 @@ body {
 
 }
 
+#two:checked ~ * .bar1 {
+    transform: translate(0, 6px) rotate(-45deg);
+}
+
+#two:checked ~ * .bar2 {
+    transform: translate(0, -4px) rotate(45deg);
+}
+
 .accordeon .accordeon-item, #three:checked ~ * .memes {
     display: block;
     animation: none;
 }
 
+#three:checked ~ * .bar1 {
+    transform: translate(0, 6px) rotate(-45deg);
+}
+
+#three:checked ~ * .bar2 {
+    transform: translate(0, -4px) rotate(45deg);
+}
+
 .accordeon .accordeon-item, #four:checked ~ * .memes {
     display: block;
     animation: none;
+}
+
+#four:checked ~ * .bar1 {
+    transform: translate(0, 6px) rotate(-45deg);
+}
+
+#four:checked ~ * .bar2 {
+    transform: translate(0, -4px) rotate(45deg);
 }
 
 @keyframes slideOn {
@@ -70,7 +118,6 @@ body {
         background-color: blue;
         opacity: 1;
         width: 400px;
-
     }
 }
 
@@ -80,10 +127,8 @@ body {
 
 .memes {
     padding: 0;
-    margin-left: 10%;
     margin-right: 25%;
     display: none;
-    /*opacity: 0;*/
     width: 400px;
     height: 400px;
 }
@@ -93,6 +138,55 @@ body {
 }
 
 h3 {
+    display: flex;
+    width: 100px;
     padding: 0;
-    /*margin-left: 25%;*/
+    margin: 0;
+    z-index: 0;
 }
+
+hr {
+    width: 400px;
+}
+
+.container-ico {
+    /*display: flex;*/
+    width: 40px;
+    height: 30px;
+    position: relative;
+    z-index: 1;
+    left: 60%;
+    padding: 0;
+    margin: 0;
+}
+
+.bar1, .bar2 {
+    background-color: black;
+    width: 24px;
+    height: 4px;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.bar1 {
+    transform: translate(0, 6px) rotate(-90deg);
+}
+
+.bar2 {
+    transform: translate(0, -3px) rotate(0deg);
+}
+
+
+.head-memes {
+    display: flex;
+    flex-direction: row;
+}
+
+/*
+.bar1 {
+    transform: translate(0, 6px) rotate(-45deg);
+}
+
+.bar2 {
+    transform: translate(0, -4px) rotate(45deg);
+}*/
