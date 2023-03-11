@@ -1,53 +1,98 @@
+body {
+    overflow-x: hidden;
+}
+
 .app-wrapper {
     max-width: 1170px;
 
     margin-left: auto;
     margin-right: auto;
 
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 .accordeon {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     height: 100%;
     position: relative;
-    left: 20%;
-    right: 20%;
+
 }
 
 .accordeon .accordeon-item:hover .memes {
     display: block;
+    animation: slideOn 0.7s 1 ease-in-out;
 }
 
-/*.accordeon .accordeon-item:hover .memes {*/
-/*    display: block;*/
-/*}*/
+.accordeon .accordeon-item:has(img):after .memes {
+    display: flex;
+    animation-play-state: paused;
+}
+
+.accordeon .accordeon-item:has(img):hover .memes {
+    display: flex;
+    /*animation-play-state: paused;*/
+}
 
 .accordeon .accordeon-item, #one:checked ~ * .memes {
     display: block;
+    animation: none;
+
 }
 
 .accordeon .accordeon-item, #two:checked ~ * .memes {
     display: block;
+    animation: none;
+
 }
 
 .accordeon .accordeon-item, #three:checked ~ * .memes {
     display: block;
+    animation: none;
 }
 
 .accordeon .accordeon-item, #four:checked ~ * .memes {
     display: block;
+    animation: none;
 }
 
+@keyframes slideOn {
+    0% {
+        /*display: block;*/
+        opacity: 0.1;
+        height: 100px;
+        width: 100px;
+    }
+    100% {
+        background-color: blue;
+        opacity: 1;
+        width: 400px;
 
-/*.check:checked .memes {*/
-/*    display: block;*/
-/*}*/
+    }
+}
+
+.accordeon-item {
+    overflow: hidden;
+}
 
 .memes {
+    padding: 0;
+    margin-left: 10%;
+    margin-right: 25%;
     display: none;
-    width: 601px;
+    /*opacity: 0;*/
+    width: 400px;
     height: 400px;
+}
+
+.visible {
+    display: none;
+}
+
+h3 {
+    padding: 0;
+    /*margin-left: 25%;*/
 }
